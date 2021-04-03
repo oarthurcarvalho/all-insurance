@@ -2,6 +2,8 @@ from flask import Flask, request
 import pickle
 import pandas as pd
 
+from data_prep import AllInsurance
+
 # load model
 model = pickle.load( open('models/GB_tuned.pkl', 'rb') )
 
@@ -19,8 +21,14 @@ def predict():
         else:
             df_raw = pd.DataFrame( test_json, columns=test_json[0].keys() )
 
+    # instanciando data_prep
+    pipeline = AllInsurance()
+
+    # transformando a feature Annual_Premium
+    df1 = pipeline.data_preparation( df_raw )
+
     # prediction
-    pred = model.predict( df_raw )
+    pred = model.predict( df1 )
 
     df_raw['prediction'] = pred
 
