@@ -59,7 +59,7 @@ INNER JOIN veiculos v ON v.id_cliente = c.id_cliente
 ORDER BY c.id_cliente
 ```
 
-As credenciais de acesso ao banco ficam no arquivo `.env`, que não é versionado. Para executar o notebook, copie o arquivo [`.env.example`](.env.example) para `.env` e preencha os dados de conexão.
+As credenciais de acesso ao banco ficam no arquivo `.env`, que não é versionado. Para executar o notebook, crie esse arquivo na raiz do projeto com as variáveis `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_SCHEMA`, `DB_USER` e `DB_PASSWORD`.
 
 #### Dicionário de Dados
 
@@ -389,7 +389,6 @@ all-insurance/
 ├── tests/
 │   ├── test_api.py                    # testes automatizados da API (pytest)
 │   └── requisicao_api.py              # requisição de exemplo para a API local ou publicada
-├── .env.example                       # modelo das credenciais do banco de dados
 ├── render.yaml                        # configuração do deploy no Render
 └── requirements.txt
 ```
