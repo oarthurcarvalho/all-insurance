@@ -7,7 +7,7 @@
 // com mais chance de contratar o seguro automotivo.
 // ==========================================================================
 
-// URL da API publicada no Render (substitua pela URL do seu serviço)
+// URL da API publicada no Heroku (substitua pela URL do seu app)
 const API_URL = 'https://all-insurance-api.onrender.com';
 
 // quantidade de clientes enviados em cada requisição
@@ -147,8 +147,8 @@ function destacarClientes() {
 }
 
 
-// no plano gratuito do Render, a API "dorme" após 15 minutos sem uso e pode
-// levar até 1 minuto para acordar: tenta algumas vezes antes de desistir
+// no plano Eco do Heroku, a API "dorme" após 30 minutos sem uso e leva alguns
+// segundos para acordar: tenta algumas vezes antes de desistir
 function acordarApi() {
   for (let tentativa = 1; tentativa <= 6; tentativa++) {
     try {

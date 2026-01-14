@@ -1,0 +1,4 @@
+# build da API no Heroku a partir do Dockerfile da pasta api/
+build:
+  docker:
+    web: api/Dockerfile

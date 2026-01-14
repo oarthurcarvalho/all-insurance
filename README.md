@@ -331,7 +331,7 @@ Com o modelo escolhido, treinado e com bom desempenho, o próximo passo foi colo
 Para viabilizar essa funcionalidade, desenvolvemos duas peças: a API, que calcula o score de propensão de compra, e um script do Google Apps Script, que conecta a planilha à API.
 
 #### API de Previsão
-Essa API é responsável por calcular o score de propensão de compra de cada cliente. Ela foi desenvolvida com Flask, empacotada em um container Docker e publicada no [Render](https://render.com), com a configuração do deploy descrita no arquivo [`render.yaml`](render.yaml).
+Essa API é responsável por calcular o score de propensão de compra de cada cliente. Ela foi desenvolvida com Flask, empacotada em um container Docker e publicada no [Heroku](https://www.heroku.com), com o build da imagem descrito no arquivo [`heroku.yml`](heroku.yml).
 
 O processo funciona da seguinte forma: a API recebe os dados dos clientes em formato JSON, no mesmo formato das tabelas do banco de dados. A classe `AllInsurance` carrega os scalers e encoders salvos durante o treinamento, aplica as mesmas transformações do notebook e seleciona as features na mesma ordem utilizada no treinamento. Em seguida, o modelo calcula a probabilidade de cada cliente ter interesse no seguro automotivo.
 
@@ -358,7 +358,7 @@ Para montar a planilha:
 2. Acesse **Extensões > Apps Script**, cole o conteúdo de [`google-sheets/all_insurance.gs`](google-sheets/all_insurance.gs) e substitua a constante `API_URL` pela URL da API publicada.
 3. Salve o script e recarregue a planilha. O menu **All Insurance** aparecerá ao lado do menu **Ajuda**. Na primeira execução, o Google pede autorização para o script acessar a planilha e se conectar a um serviço externo (a API).
 
-**OBS.: No plano gratuito do Render, a API "dorme" após 15 minutos sem uso e pode levar cerca de 1 minuto para responder à primeira requisição. O script já trata esse comportamento, tentando novamente até a API ficar disponível.**
+**OBS.: No plano Eco do Heroku, a API "dorme" após 30 minutos sem uso e leva alguns segundos para responder à primeira requisição. O script já trata esse comportamento, tentando novamente até a API ficar disponível.**
 
 ## Próximos Passos
 
@@ -389,6 +389,6 @@ all-insurance/
 ├── tests/
 │   ├── test_api.py                    # testes automatizados da API (pytest)
 │   └── requisicao_api.py              # requisição de exemplo para a API local ou publicada
-├── render.yaml                        # configuração do deploy no Render
+├── heroku.yml                         # build da API no Heroku
 └── requirements.txt
 ```
