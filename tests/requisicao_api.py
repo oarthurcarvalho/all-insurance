@@ -7,7 +7,6 @@ import pandas as pd
 base_path = os.path.dirname( os.path.abspath( __file__ ) )
 
 # URL da API: local por padrão ou a URL do Heroku passada como argumento
-# ex.: python tests/requisicao_api.py https://all-insurance-api.onrender.com
 url = sys.argv[1] if len( sys.argv ) > 1 else 'http://127.0.0.1:5000'
 
 # carregando os novos clientes
