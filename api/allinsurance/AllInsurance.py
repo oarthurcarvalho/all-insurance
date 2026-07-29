@@ -90,7 +90,7 @@ class AllInsurance( object ):
         # predição: probabilidade de o cliente ter interesse no seguro automotivo
         pred = model.predict_proba( test_data )[:, 1]
 
-        # junta o score aos dados originais
+        # junta o score aos dados original
         original_data['score'] = pred
 
         return original_data.to_json( orient='records' )
