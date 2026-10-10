@@ -8,7 +8,7 @@
 // ==========================================================================
 
 // URL da API publicada no Heroku (substitua pela URL do seu app)
-const API_URL = 'https://all-insurance-api.onrender.com';
+const API_URL = 'https://all-insurance-api-163fa9a62447.herokuapp.com';
 
 // quantidade de clientes enviados em cada requisição
 const TAMANHO_LOTE = 1000;

@@ -340,7 +340,7 @@ A resposta da API inclui os dados originais dos clientes, acrescidos da coluna `
 Como os dados podem ser digitados na planilha, a API também valida a entrada: espaços extras e diferenças entre maiúsculas e minúsculas são ignorados, enquanto colunas ausentes, categorias desconhecidas ou valores numéricos inválidos retornam um erro `400` com a descrição do problema, em vez de um score incorreto. Esses comportamentos são verificados pelos testes automatizados em [`tests/test_api.py`](tests/test_api.py).
 
 ```bash
-curl -X POST https://all-insurance-api.onrender.com/allinsurance/predict \
+curl -X POST https://all-insurance-api-163fa9a62447.herokuapp.com/allinsurance/predict \
      -H "Content-Type: application/json" \
      -d '[{"id_cliente": 381110, "gender": "Male", "age": 25, "region_code": 11, "driving_license": 1,
            "previously_insured": 1, "annual_premium": 35786.0, "policy_sales_channel": 152,
