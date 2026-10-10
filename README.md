@@ -20,7 +20,7 @@ A estratégia de solução adotada neste projeto se baseia no método CRISP-DM (
 
 ![CRISP-DM](images/crisp-dm.png)
 
-A seguir, descrevo cada etapa explicando as premissas adotadas e as decisões tomadas com o objetivo de obter o melhor resultado para o problema apresentado.
+A seguir descrevo cada etapa explicando as premissas adotadas e as decisões tomadas com o objetivo de obter o melhor resultado para o problema apresentado.
 
 ### Questão de Negócio
 
